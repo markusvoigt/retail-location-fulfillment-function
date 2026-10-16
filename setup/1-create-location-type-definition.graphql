@@ -1,0 +1,19 @@
+# Step 1: Create the location metafield definition `custom.location_type`.
+# After this step, staff can set the value on each location in the Shopify admin.
+# Required access scope: write_locations (admin user or app).
+mutation CreateLocationTypeDefinition {
+  metafieldDefinitionCreate(
+    definition: {
+      name: "Location type"
+      namespace: "custom"
+      key: "location_type"
+      description: "Set to \"retail\" for retail stores. Online orders are not fulfilled from retail stores."
+      type: "single_line_text_field"
+      ownerType: LOCATION
+      validations: [{ name: "choices", value: "[\"retail\"]" }]
+    }
+  ) {
+    createdDefinition { id namespace key }
+    userErrors { field message code }
+  }
+}

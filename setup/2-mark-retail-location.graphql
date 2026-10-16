@@ -1,0 +1,20 @@
+# Step 2: Mark a location as a retail store.
+# Replace LOCATION_ID with the ID of the retail store location, for example
+# gid://shopify/Location/123456789. Repeat for every retail store.
+# You can also set this value in the Shopify admin instead.
+mutation MarkRetailLocation {
+  metafieldsSet(
+    metafields: [
+      {
+        ownerId: "LOCATION_ID"
+        namespace: "custom"
+        key: "location_type"
+        type: "single_line_text_field"
+        value: "retail"
+      }
+    ]
+  ) {
+    metafields { id namespace key value }
+    userErrors { field message code }
+  }
+}

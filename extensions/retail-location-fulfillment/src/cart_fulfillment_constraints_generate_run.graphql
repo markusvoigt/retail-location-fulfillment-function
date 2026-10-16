@@ -1,0 +1,24 @@
+# Input query for the fulfillment constraint function.
+# Shopify runs this query before the function and passes the result as `input`.
+query CartFulfillmentConstraintsGenerateRunInput {
+  cart {
+    # The cart lines that need delivery. The constraint applies to these lines.
+    deliverableLines {
+      id
+    }
+    # The POS location where the cart was created (for example "send cart" /
+    # pay by link from POS). This value is null for online store carts.
+    retailLocation {
+      id
+    }
+  }
+  # All locations of the shop.
+  locations {
+    id
+    # Location metafield that marks retail stores.
+    # Set the value "retail" on every location that is a retail store.
+    locationType: metafield(namespace: "custom", key: "location_type") {
+      value
+    }
+  }
+}

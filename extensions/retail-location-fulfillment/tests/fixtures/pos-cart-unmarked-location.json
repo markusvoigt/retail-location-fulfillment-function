@@ -1,0 +1,52 @@
+{
+  "payload": {
+    "export": "cart-fulfillment-constraints-generate-run",
+    "target": "cart.fulfillment-constraints.generate.run",
+    "input": {
+      "cart": {
+        "deliverableLines": [
+          {
+            "id": "gid://shopify/DeliverableCartLine/1"
+          },
+          {
+            "id": "gid://shopify/DeliverableCartLine/2"
+          }
+        ],
+        "retailLocation": {
+          "id": "gid://shopify/Location/640446"
+        }
+      },
+      "locations": [
+        {
+          "id": "gid://shopify/Location/640446",
+          "locationType": null
+        },
+        {
+          "id": "gid://shopify/Location/673214",
+          "locationType": {
+            "value": "retail"
+          }
+        },
+        {
+          "id": "gid://shopify/Location/705982",
+          "locationType": null
+        }
+      ]
+    },
+    "output": {
+      "operations": [
+        {
+          "deliverableLinesMustFulfillFromAdd": {
+            "deliverableLineIds": [
+              "gid://shopify/DeliverableCartLine/1",
+              "gid://shopify/DeliverableCartLine/2"
+            ],
+            "locationIds": [
+              "gid://shopify/Location/640446"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

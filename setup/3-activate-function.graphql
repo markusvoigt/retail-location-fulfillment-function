@@ -1,0 +1,14 @@
+# Step 3: Activate the function on the shop.
+# Deploying the app is not enough. The function runs only after this rule exists.
+# Run this mutation with the same app that deployed the function.
+# Required access scope: write_fulfillment_constraint_rules.
+# deliveryMethodTypes: the delivery methods where the constraint applies.
+mutation ActivateRetailLocationRule {
+  fulfillmentConstraintRuleCreate(
+    functionHandle: "retail-location-fulfillment"
+    deliveryMethodTypes: [SHIPPING, PICK_UP, LOCAL, PICKUP_POINT]
+  ) {
+    fulfillmentConstraintRule { id deliveryMethodTypes }
+    userErrors { field message }
+  }
+}

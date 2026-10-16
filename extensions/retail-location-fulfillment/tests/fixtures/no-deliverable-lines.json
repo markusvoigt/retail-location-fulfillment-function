@@ -1,0 +1,33 @@
+{
+  "payload": {
+    "export": "cart-fulfillment-constraints-generate-run",
+    "target": "cart.fulfillment-constraints.generate.run",
+    "input": {
+      "cart": {
+        "deliverableLines": [],
+        "retailLocation": {
+          "id": "gid://shopify/Location/673214"
+        }
+      },
+      "locations": [
+        {
+          "id": "gid://shopify/Location/640446",
+          "locationType": null
+        },
+        {
+          "id": "gid://shopify/Location/673214",
+          "locationType": {
+            "value": "retail"
+          }
+        },
+        {
+          "id": "gid://shopify/Location/705982",
+          "locationType": null
+        }
+      ]
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}
